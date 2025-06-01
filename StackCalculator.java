@@ -1,3 +1,9 @@
+// Problem: Create a simple calculator that can:
+
+// Push numbers onto a stack
+// Pop two numbers and add them
+// Pop two numbers and multiply them
+
 import java.util.Stack;
 
 public class StackCalculator {
