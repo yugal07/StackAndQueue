@@ -1,3 +1,4 @@
+package queue;
 // Problem: Simulate the "Hot Potato" game using a queue!
 
 // Players sit in a circle: ["Tom", "Jerry", "Mickey", "Donald"]

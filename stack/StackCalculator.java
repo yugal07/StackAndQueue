@@ -1,3 +1,4 @@
+package stack;
 // Problem: Create a simple calculator that can:
 
 // Push numbers onto a stack

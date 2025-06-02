@@ -1,3 +1,4 @@
+package queue;
 public class QueueArray {
     private int arr[];
     private int size;

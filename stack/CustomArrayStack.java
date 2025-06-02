@@ -1,3 +1,4 @@
+package stack;
 //  Practice Exercise 1: Build Your Own Array Stack
 // Problem: Modify the ArrayStack to handle String data instead of integers.
 // Requirements:

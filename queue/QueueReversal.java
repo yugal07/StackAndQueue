@@ -1,3 +1,4 @@
+package queue;
 // Problem: Write a method to reverse a queue using only a stack as auxiliary data structure.
 // Hint:
 

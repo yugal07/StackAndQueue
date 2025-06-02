@@ -1,3 +1,4 @@
+package queue;
 // Problem: Create a program that:
 
 // Enqueues the strings "Alice", "Bob", "Charlie", "Diana"

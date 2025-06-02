@@ -1,3 +1,4 @@
+package queue;
 // Problem: Modify the CircularQueue to handle String data instead of integers.
 // Requirements:
 
