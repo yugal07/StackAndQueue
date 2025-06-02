@@ -30,10 +30,8 @@ public class PostFixEvaluator {
 
             }
         }
-
         return stack.pop();
     }
-
     public static void main(String[] args) {
         System.out.println(evaluatePostfix("231*+9-"));
     }
