@@ -35,21 +35,22 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 public class SlidingWindowMaximum {
-    public static int[] maxSlidingWindow(int arr[] , int k){
-        if(arr.length == 0 || k == 0) return new int[0];
+    public static int[] maxSlidingWindow(int arr[] , int k) {
         Deque <Integer> deque = new LinkedList<>();
-        int result[] = new int[arr.length - k - 1];
+        int result[] = new int[arr.length - k + 1];
 
         for(int i = 0 ; i < arr.length ; i++) {
             while(!deque.isEmpty() && deque.peekFirst() <= i - k) {
                 deque.pollFirst();
             }
+
             while(!deque.isEmpty() && arr[deque.peekLast()] < arr[i]) {
                 deque.pollLast();
             }
+
             deque.offerLast(i);
 
-            if(i > k + 1) {
+            if(i > k - 1){
                 result[i - k + 1] = arr[deque.peekFirst()];
             }
         }
