@@ -11,27 +11,25 @@ package stack;
 import java.util.Stack;
 
 public class BalancedParenthesis {
-    public static boolean isBalanced(String string){
+    public static boolean isBalanced(String string) {
         Stack <Character> stack = new Stack<>();
 
-        for(char c: string.toCharArray()){
-            if(c == '[' || c == '(' || c == '{'){
-                stack.push(c);
+        for(int i = 0 ; i < string.length() ; i++) {
+            if(string.charAt(i) == '(' || string.charAt(i) == '[' || string.charAt(i) == '{') {
+                stack.push(string.charAt(i));
             }
-
             else {
-                if(stack.isEmpty()){
+                if(stack.isEmpty()) {
                     return false;
                 }
 
-                Character top = stack.pop();
-                
-                if((c == ']' && top != '[') || (c == '}' && top != '{') || (c == ']' && top != '[')){
-                    return false;
-                }
+                Character c = stack.peek();
+                if((c == '(' && string.charAt(i) == ')') || (c == '{' && string.charAt(i) == '}') || (c == '[' && string.charAt(i) == ']')) {
+                    stack.pop();
+                    continue;
+                }else return false;
             }
         }
-
         return stack.isEmpty();
     }
     public static void main(String[] args) {
