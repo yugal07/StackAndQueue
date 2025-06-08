@@ -30,32 +30,34 @@ import java.util.Stack;
 public class AsteroidCollision {
     public static int[] asteroidCollision(int arr[]) {
         Stack <Integer> stack = new Stack<>();
-        Boolean health = true;
+        
+        for(int i = 0 ; i < arr.length ; i++) {
+            Boolean health = true;
 
-        for(int i = 0 ; i < arr.length ; i++){
             while(health && Integer.signum(arr[i]) == -1 && !stack.isEmpty() && Integer.signum(stack.peek()) == 1) {
-                if(Math.abs(stack.peek()) < Math.abs(arr[i])) {
+                if(Math.abs(arr[i]) > Math.abs(stack.peek())) {
                     stack.pop();
+                    continue;
                 }
-                else if(Math.abs(arr[i]) == Math.abs(stack.peek())) {
-                    stack.pop();
-                    health = false;
+                else if(Math.abs(arr[i]) == Math.abs(stack.peek())){
+                health = false;
+                stack.pop();
                 }
                 else {
                     health = false;
                 }
             }
-
-            if(health){
+            if(health) {
                 stack.push(arr[i]);
             }
         }
+
         int [] result = new int[stack.size()];
         int i = 0;
-        for(int element : stack){
-            result[i++] = element;
-        }
 
+        for(int element: stack) {
+            result[i++] = element; 
+        }
         return result;
     }
 
