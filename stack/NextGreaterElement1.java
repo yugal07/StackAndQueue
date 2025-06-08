@@ -40,11 +40,11 @@ public class NextGreaterElement1 {
             }
             stack.push(arr2[i]);
         }
-        int result[] = new int[arr1.length];
-
+        int result[]= new int[arr1.length];
         for(int i = 0 ; i < arr1.length ; i++) {
-            result[i] = map.getOrDefault(arr1[i], -1);
+            result[i] = map.getOrDefault(arr1[i] , -1);
         }
+
         return result;
     }
 }
